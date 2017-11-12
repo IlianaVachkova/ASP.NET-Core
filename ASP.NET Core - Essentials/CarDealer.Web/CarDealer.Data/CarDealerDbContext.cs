@@ -8,9 +8,9 @@ using CarDealer.Web.Models;
 
 namespace CarDealer.Web.Data
 {
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class CarDealerDbContext : IdentityDbContext<User>
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        public CarDealerDbContext(DbContextOptions<CarDealerDbContext> options)
             : base(options)
         {
         }
