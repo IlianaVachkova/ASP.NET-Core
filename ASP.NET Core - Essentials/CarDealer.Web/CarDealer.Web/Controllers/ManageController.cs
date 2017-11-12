@@ -8,9 +8,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using CarDealer.Web.Models;
 using CarDealer.Web.Models.ManageViewModels;
 using CarDealer.Web.Services;
+using CarDealer.Data.Models;
 
 namespace CarDealer.Web.Controllers
 {
