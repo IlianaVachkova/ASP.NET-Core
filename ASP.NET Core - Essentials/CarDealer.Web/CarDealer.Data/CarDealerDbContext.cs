@@ -4,7 +4,7 @@ using CarDealer.Data.Models;
 
 namespace CarDealer.Data
 {
-    public class CarDealerDbContext : IdentityDbContext<User>
+    public class CarDealerDbContext : IdentityDbContext<ApplicationUser>
     {
         public CarDealerDbContext(DbContextOptions<CarDealerDbContext> options)
             : base(options)
