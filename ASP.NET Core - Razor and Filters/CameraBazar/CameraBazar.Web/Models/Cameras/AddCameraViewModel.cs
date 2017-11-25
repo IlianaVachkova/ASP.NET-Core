@@ -1,11 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using CameraBazar.Data.Models;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace CameraBazar.Data.Models
+namespace CameraBazar.Web.Models.Cameras
 {
-    public class Camera
+    public class AddCameraViewModel
     {
-        public int Id { get; set; }
-
         public CameraMakeType Make { get; set; }
 
         [Required]
@@ -31,20 +34,17 @@ namespace CameraBazar.Data.Models
         public bool IsFullFrame { get; set; }
 
         [Required]
-        [MaxLength(15)]
+        [StringLength(15)]
         public string VideoResolution { get; set; }
 
         public LightMetering LightMetering { get; set; }
 
         [Required]
-        [MaxLength(6000)]
+        [StringLength(6000)]
         public string Description { get; set; }
 
         [Required]
+        [StringLength(2000, MinimumLength = 10)]
         public string ImageUrl { get; set; }
-
-        public string UserId { get; set; }
-
-        public User User { get; set; }
     }
 }

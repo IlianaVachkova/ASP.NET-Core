@@ -1,9 +1,12 @@
-﻿namespace CameraBazar.Data.Models
+﻿using System;
+
+namespace CameraBazar.Data.Models
 {
+    [Flags]
     public enum LightMetering
     {
-        Spot = 0,
-        CenterWeighted = 1,
-        Evaluative = 2
+        Spot = 1,
+        CenterWeighted = 2,
+        Evaluative = 4
     }
 }
