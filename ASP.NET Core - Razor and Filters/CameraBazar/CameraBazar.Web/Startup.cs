@@ -34,6 +34,8 @@ namespace CameraBazar.Web
                 .AddEntityFrameworkStores<CameraBazarDbContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddDomainServices();
+
             services.AddMvc();
         }
 

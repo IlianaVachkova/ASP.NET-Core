@@ -26,8 +26,13 @@ namespace CameraBazar.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(6000);
+
                     b.Property<string>("ImageUrl")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(2000);
 
                     b.Property<bool>("IsFullFrame");
 

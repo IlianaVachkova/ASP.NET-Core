@@ -59,15 +59,15 @@
                 <span asp-validation-for="VideoResolution" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="LightMetering"></label>
+                <label asp-for="LightMeterings"></label>
                 @foreach (var enumValue in Enum.GetValues(typeof(LightMetering)).Cast<LightMetering>())
                 {
-                <input type="checkbox" name="@nameof(LightMetering)" value="@((int)enumValue)" /> @: @enumValue.ToDispalyName()
+                <input type="checkbox" name="@nameof(LightMetering)s" value="@((int)enumValue)" /> @: @enumValue.ToDispalyName()
                 }
                 <!--<input type="checkbox" name="LightMetering" value="@((int)LightMetering.Spot)"/> Spot
                 <input type="checkbox" name="LightMetering" value="@((int)LightMetering.CenterWeighted)"> Center-Weighted
                 <input type="checkbox" name="LightMetering" value="@((int)LightMetering.Evaluative)"> Evaluative -->
-                <span asp-validation-for="LightMetering" class="text-danger"></span>
+                <span asp-validation-for="LightMeterings" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Description"></label>
