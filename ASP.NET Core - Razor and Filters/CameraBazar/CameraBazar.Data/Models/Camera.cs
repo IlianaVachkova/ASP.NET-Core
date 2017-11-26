@@ -41,6 +41,8 @@ namespace CameraBazar.Data.Models
         public string Description { get; set; }
 
         [Required]
+        [MinLength(10)]
+        [MaxLength(2000)]
         public string ImageUrl { get; set; }
 
         public string UserId { get; set; }
