@@ -24,6 +24,8 @@ namespace BookShop.Api
                 .AddDbContext<BookShopDbContext>(options =>options
                 .UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddDomainServices();
+
             services.AddMvc();
         }
 
