@@ -2,7 +2,7 @@
 using System;
 using System.Linq;
 
-namespace BookShop.Api.Infrastructure.Mapping
+namespace BookShop.Common.Mapping
 {
     public class AutoMapperProfile : Profile
     {

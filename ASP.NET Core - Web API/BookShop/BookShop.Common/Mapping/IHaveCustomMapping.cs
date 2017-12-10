@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-namespace BookShop.Api.Infrastructure.Mapping
+namespace BookShop.Common.Mapping
 {
     public interface IHaveCustomMapping
     {
