@@ -1,10 +1,12 @@
 ﻿using BookShop.Services.Models.Authors;
+using System.Threading.Tasks;
 
 namespace BookShop.Services
 {
     public interface IAuthorService
     {
-        AuthorDetailsServiceModel Details(int id);
+        Task<int> Create(string firstName, string lastName);
 
+        Task<AuthorDetailsServiceModel> Details(int id);
     }
 }

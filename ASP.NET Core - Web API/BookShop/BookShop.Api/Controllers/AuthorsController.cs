@@ -3,6 +3,8 @@ using BookShop.Api.Infrastructure.Extensions;
 using Microsoft.AspNetCore.Mvc;
 
 using static BookShop.Api.WebConstants;
+using BookShop.Api.Models.Authors;
+using System.Threading.Tasks;
 
 namespace BookShop.Api.Controllers
 {
@@ -16,6 +18,19 @@ namespace BookShop.Api.Controllers
         }
 
         [HttpGet(WithId)]
-        public IActionResult Get(int id) => this.OkOrNotFound(this.authors.Details(id));
+        public async Task<IActionResult> Get(int id) => this.OkOrNotFound(await this.authors.Details(id));
+
+        [HttpPost]
+        public async Task<IActionResult> Post([FromBody]AuthorRequestModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var id = await this.authors.Create(model.FirstName, model.LatsName);
+
+            return Ok(id);
+        }
     }
 }

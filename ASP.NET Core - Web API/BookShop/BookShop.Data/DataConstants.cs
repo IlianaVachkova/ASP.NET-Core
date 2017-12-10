@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace BookShop.Data
+﻿namespace BookShop.Data
 {
-    class DataConstants
+    public class DataConstants
     {
+        public const int AuthorNameMaxLength = 50;
     }
 }
