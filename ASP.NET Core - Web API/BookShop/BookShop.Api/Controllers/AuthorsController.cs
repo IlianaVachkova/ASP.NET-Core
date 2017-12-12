@@ -32,5 +32,16 @@ namespace BookShop.Api.Controllers
 
             return Ok(id);
         }
+
+        [HttpGet(BooksByAuthorId)]
+        public async Task<IActionResult> GetBooks(int? id)
+        {
+            if (id.HasValue && await this.authors.AuthorExists(id.Value))
+            {
+                return Ok(await this.authors.GetAuthorBooks(id.Value));
+            }
+
+            return NotFound("InvalidAuthorRequestError");
+        }
     }
 }

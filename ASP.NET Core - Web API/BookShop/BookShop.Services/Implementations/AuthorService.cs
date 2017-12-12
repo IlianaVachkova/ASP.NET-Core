@@ -5,6 +5,8 @@ using System.Linq;
 using BookShop.Data.Models;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using BookShop.Services.Models.Books;
+using System.Collections.Generic;
 
 namespace BookShop.Services.Implementations
 {
@@ -37,5 +39,15 @@ namespace BookShop.Services.Implementations
             .Where(a => a.Id == id)
             .ProjectTo<AuthorDetailsServiceModel>()
             .FirstOrDefaultAsync();
+
+        public async Task<bool> AuthorExists(int id)
+        {
+            return this.db.Authors.Any(a => a.Id == id);
+        }
+
+        public async Task<IEnumerable<BookAllDetailsServiceModel>> GetAuthorBooks(int id)
+        {
+            return this.db.Books.Where(b => b.AuthorId == id).ProjectTo<BookAllDetailsServiceModel>().ToList();
+        }
     }
 }
